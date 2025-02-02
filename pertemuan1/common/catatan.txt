@@ -1,0 +1,4 @@
+- common js itu identik dengan require()
+- common js adlah type module default puya nodejs
+- lalu nawma variabel nya tidak boleh sama "module"
+- 

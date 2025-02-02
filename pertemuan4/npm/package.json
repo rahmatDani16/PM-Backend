@@ -1,0 +1,25 @@
+{
+  "name": "pertemuan4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahmatDani16/Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rahmatDani16/Backend/issues"
+  },
+  "homepage": "https://github.com/rahmatDani16/Backend#readme",
+  "description": "",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "validator": "^13.12.0"
+  }
+}
