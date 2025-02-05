@@ -8,6 +8,14 @@ const app = express();
 
 app.use("/product",routerProduct);
 
+//isinya 
+//1. import semua rauter app 
+//2. app level middleware - app.use()
+//- express.json()
+//- urlEncode()
+//- routing pattren 
+//3; pattren api direktori 
+
 
 app.listen(3000,()=>{
     console.log("Server is running...");

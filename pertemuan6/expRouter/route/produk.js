@@ -29,7 +29,7 @@ const router = express.Router();
 
 //== INI CONTOH 2 ====//
 //buat variabel untuk express router nya 
-router.get("/",getAll)
+router.get("/",getAll,editData)
 
 
 // router.get("/edit/:id",(req,res) =>{

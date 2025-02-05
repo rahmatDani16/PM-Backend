@@ -1,4 +1,9 @@
-
+//controller = jembatan antara model dengan view/request client 
+// isisnya:
+//1. reponse json 
+//2. validasi 
+//3. Logika lainya
+ 
 //isinya fungsi untuk mengelola data produk 
 //import model 
 import dataProduct from "../model/product.js";

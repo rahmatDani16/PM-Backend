@@ -3,7 +3,7 @@ import express from "express";
 const app = express();
 
 const PORT = 3000
-//App level middlaware
+// App level middlaware
 app.use(express.json());
 //Jalankan server 
 app.get("/",(req,res)=>{
