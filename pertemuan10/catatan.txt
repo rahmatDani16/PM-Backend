@@ -1,0 +1,8 @@
+1. folder ini , terkoneksi dengan mysql 
+2. syarat membuat koneksi db 
+    - install mysqk2 
+    - buat file koneksi 
+3. buat db dan table nay 
+4. isi data 
+5. cek di postman menggunkan method http Request
+    - get ,post,put,delete 
