@@ -1,0 +1,45 @@
+<div class="row mb-2">
+  <div class="col-md-3">
+    <div class="small-box bg-success">
+      <div class="inner">
+        <h3><%= products.length %></h3>
+
+        <p>Total Produk</p>
+      </div>
+      <div class="icon">
+        <i class="ion ion-bag"></i>
+      </div>
+      <a href="#" class="small-box-footer"
+        >More info <i class="fas fa-arrow-circle-right"></i
+      ></a>
+    </div>
+  </div>
+  <!-- Menampilkan data pada models memnggunakan ejs foreach -->
+  <div class="col-md-9">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Data Produk</h3>
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th style="width: 10px">#</th>
+              <th>Nama Produk</th>
+              <th>Harga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% products.forEach(element => { %>
+            <tr>
+              <td><%= element.id %></td>
+              <td><%= element.nama %></td>
+              <td><%= element.price %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
