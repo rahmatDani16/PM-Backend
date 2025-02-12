@@ -1,0 +1,2 @@
+kalo kita mau menggunkan sequqlize kita harus install dulu 
+- npm i express nodemon mysql2 sequelize dotenv
