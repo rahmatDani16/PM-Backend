@@ -13,7 +13,7 @@ const kategori = sequelize.define("kategori",
         },
         nama_kategori:{
             
-            type: DataTypes.STRING(99),
+            type: DataTypes.STRING(45),
             allowNull: false,
             validate: {
                 notEmpty:{
@@ -40,7 +40,6 @@ const kategori = sequelize.define("kategori",
 }
 },{
     freezeTableName: true
-}
-)
+})
 sequelize.sync();
 export default kategori;

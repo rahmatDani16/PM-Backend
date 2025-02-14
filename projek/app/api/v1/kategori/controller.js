@@ -4,14 +4,20 @@ const getData = async (req, res) => {
      try{
           // ini hasilnya sama kayak select * from 
           const kategori = await modelKategori.findAll()
+          if(kategori.length === 0){
+               return  res.json({
+                      status : 400,
+                      message : "Data kategori boleh Kosong "
+                 })
+            }
           //buat respon JSON nya
-          res.json({
+        return  res.json({
                status : 200,
-               meassage : "Data Kategori",
+               message : "Data Kategori",
                data : kategori
           })
      }catch(error){
-          res.json({
+        return  res.json({
                status : 500,
                message : error.message
           })
@@ -20,10 +26,7 @@ const getData = async (req, res) => {
 // ini insert  into
 const createData = async (req,res) =>{
      try{
-          //ini perlu menangkap req.body
           const {nama_kategori} = req.body
-          //memeriksa inputan 
-          //kalau mau bikin middleware juga bisa
           if(nama_kategori === ""){
              return  res.json({
                     status : 400,
@@ -34,14 +37,14 @@ const createData = async (req,res) =>{
           const tambah = await modelKategori.create(
                {nama_kategori}
           )
-          res.json({
+        return  res.json({
                status : 200,
                message: "Data kategori behasil di tambahkan ",
                data : tambah
           })
      }catch(error){
         
-          res.json({
+         return res.json({
                status : 400,
                message : error.message
           })
@@ -49,18 +52,30 @@ const createData = async (req,res) =>{
      }
 }
 //findByPK
-const findByPK = async (req,res)=>{
+const getById = async (req,res)=>{
      //butuh req,params untuk mendapatkan id data yang di maksud
      try{
           const idCari = req.params.id
-          const mahasiswaId = await modelKategori.findByPk(idCari);
-          res.json({
+          if(idCari === ""){
+               return  res.json({
+                      status : 400,
+                      message : "Id kategori boleh Kosong "
+                 })
+            }
+          const kategoriId = await modelKategori.findByPk(idCari);
+          if(!kategoriId){
+               return  res.json({
+                      status : 400,
+                      message : "kategori tidak ditemukan "
+                 })
+            }
+         return res.json({
                status : 200,
-               messagew: "Data Kategori",
-               data: mahasiswaId
+               message: "Data Kategori",
+               data:kategoriId
           })
      }catch(error){
-          res.json({
+         return res.json({
                status : 500,
                message : error,meassage
           })
@@ -69,14 +84,20 @@ const findByPK = async (req,res)=>{
 // //delete
 const deleteData = async (req,res)=>{
      try{
-          const idCari = req.params.id
+          const {idCari} = req.params;
+          if (!idCari) {
+               return res.json({
+                   status: 400,
+                   message: "Data kategori tidak ada"
+               });
+           }
           await modelKategori.destroy({where :{id:idCari}})
-          res.json({
+          return res.json({
                staus:200,
                message : "Data Kategori berhasil di hapus"
           }) 
-     }catch(error){
-          res.json({
+     }catch(error){ 
+          return res.json({
                status: 500,
                message : error.message
           })
@@ -87,6 +108,12 @@ const updateData = async (req,res)=>{
      try{
           const idCari = req.params.id
           const {nama_kategori} = req.body
+          if (!idCari || !nama_kategori) {
+               return res.json({
+                   status: 400,
+                   message: "Id kategori dan nama kategori tidak boleh kosong"
+               });
+           }
           await modelKategori.update(
                {
                     nama_kategori
@@ -97,12 +124,12 @@ const updateData = async (req,res)=>{
 
                }
           );
-          res.json({
+       return   res.json({
                status : 200 ,
                message : "Data Kategori di update"
           })
      }catch(error){
-          res.json({
+        return  res.json({
                status : 500,
                message : error.message
           })
@@ -111,7 +138,7 @@ const updateData = async (req,res)=>{
 export {
      getData ,
      createData,
-     findByPK,
+     getById,
      deleteData,
      updateData
     };
