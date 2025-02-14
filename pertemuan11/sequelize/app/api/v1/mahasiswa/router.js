@@ -1,4 +1,5 @@
 import express from "express"
+//ini import dari controller
 import {getData,createData, findByPK, deleteData, updateData} from "./controller.js"
 
 const router = express.Router();

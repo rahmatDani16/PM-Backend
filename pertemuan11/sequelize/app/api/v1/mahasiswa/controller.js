@@ -22,6 +22,15 @@ const createData = async (req,res) =>{
      try{
           //ini perlu menangkap req.body
           const {nama} = req.body
+          //memeriksa inputan 
+          //kalau mau bikin middleware juga bisa
+          if(nama === ""){
+             return  res.json({
+                    status : 400,
+                    message : "Nama tidak boleh Kosong "
+               })
+          }
+          //proses untuk insert data 
           const tambah = await modelMahasiswa.create(
                {nama}
           )
@@ -31,6 +40,10 @@ const createData = async (req,res) =>{
                data : tambah
           })
      }catch(error){
+          //console.log(error)
+          //pecah error yang ,menggunakan fungsi array.map
+          //error [0]
+          //error [1]
           res.json({
                status : 400,
                message : error.message
@@ -43,7 +56,7 @@ const findByPK = async (req,res)=>{
      //butuh req,params untuk mendapatkan id data yang di maksud
      try{
           const idCari = req.params.id
-          const mahasiswa = await modelMahasiswa.findByPk(idCari);
+          const mahasiswaId = await modelMahasiswa.findByPk(idCari);
           res.json({
                status : 200,
                messagew: "Data Mahasiswa",
