@@ -2,7 +2,7 @@
 // File system module 
 
 // const { log } = require('console');
-// const fs = require('fs');
+const fs = require('fs');
 
 //Menuliskan string ke fiel (synchronous)
 // fs.writeFileSync('test.txt','Hallow world secara syncronous');
@@ -15,9 +15,9 @@
 // }
 
 // Meniliskan string ke file (Asynchronous)
-// fs.appendFileSync('data/test.txt','Hallow world secara Asynchronous',(e)=>{
-//     console.log(e);
-// });
+fs.appendFileSync('data/test.txt','Hallow world  Asynchronous',(e)=>{
+    console.log(e);
+});
 
 
 //Membaca isi file secara synhronous
@@ -124,15 +124,15 @@
 //     fs.appendFileSync(`file ${i}.txt Hallo ${i}`);
 // }
 
-const fs = require('fs');
+// const fs = require('fs');
 
-fs.mkdirSync('Folder', { recursive: true });
+// fs.mkdirSync('Folder', { recursive: true });
 
-for (let i = 1; i <= 3; i++) {
-    const folder = `Folder/file${i}.txt `;
-    const file = ` Halo${i}`;
+// for (let i = 1; i <= 3; i++) {
+//     const folder = `Folder/file${i}.txt `;
+//     const file = ` Halo${i}`;
 
   
-    fs.writeFileSync(folder,file);
-    console.log(`folder${i}.txt telah dibuat`);
-}
+//     fs.writeFileSync(folder,file);
+//     console.log(`folder${i}.txt telah dibuat`);
+// }
