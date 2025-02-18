@@ -72,6 +72,7 @@ const findByPK = async (req,res)=>{
 //delete
 const deleteData = async (req,res)=>{
      try{
+          //try  proses akan dijalankan ketika data yang masuk benar.
           const idCari = req.params.id
           await modelMahasiswa.destroy({where :{id:idCari}})
           res.json({
@@ -79,6 +80,7 @@ const deleteData = async (req,res)=>{
                message : "Data berhgasil di hapus"
           }) 
      }catch(error){
+          //catch dijalakan ketika error /data yang masuk salah.
           res.json({
                status: 500,
                message : error.message
