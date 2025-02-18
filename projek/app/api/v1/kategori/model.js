@@ -39,6 +39,7 @@ const kategori = sequelize.define("kategori",
 
 }
 },{
+    //unutk menghilangkan konsep prular dan singular yang di belakangnya "S"
     freezeTableName: true
 })
 sequelize.sync();
