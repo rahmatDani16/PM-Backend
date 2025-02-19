@@ -35,6 +35,10 @@ const Buku = sequelize.define("buku",{
         type:DataTypes.TEXT,
         allowNull: false
     },
+    sampul : {
+        type : DataTypes.STRING(100),
+        allowNull : false
+    },
     createdAt:{
         type : DataTypes.DATE,
         allowNull: true
@@ -46,5 +50,5 @@ const Buku = sequelize.define("buku",{
 },{
     freezeTableName: true
 })
-sequelize.sync();
+sequelize.sync()
 export default Buku

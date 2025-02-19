@@ -1,0 +1,9 @@
+cara hashig password : 
+- user plain text => random string 
+- bismillah => $1234skjdfhshkdshf => masuk ke db 
+- third perty module :
+- argon 
+- berypt 
+- npm 
+
+singel hanya untuk upload satu image
