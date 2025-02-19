@@ -15,9 +15,10 @@ const user = sequelize.define("user",
             type : DataTypes.STRING(50),
             allowNull: false,
         },
-        email : {
-            type : DataTypes.STRING(100),
-            allowNull : false
+        email: {
+            type: DataTypes.STRING(100),
+            allowNull: false,
+            unique: true
         },
         password : {
             type : DataTypes.STRING(255),
@@ -26,7 +27,7 @@ const user = sequelize.define("user",
         },
         profil : {
             type : DataTypes.STRING(255),
-            allowNull : false
+            allowNull : true
         },
         createdAt: {
             type : DataTypes.DATE,
@@ -39,5 +40,5 @@ const user = sequelize.define("user",
 },{
     freezeTableName : true
 })
-sequelize.sync()
+sequelize.sync({alter : true})
 export default user

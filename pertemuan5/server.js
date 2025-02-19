@@ -105,6 +105,6 @@ app.get('getData/:id',(req,res)=>{
 })
 //jalankan servernya 
 app.listen(5000,()=>{
-    console.log('server sedang ada di jalan ');
+    console.log('Apakah kamu baik baik saja tuann....!!');
     
 })
